@@ -27,11 +27,10 @@
       {:on-click #(swap! collapsed? not)} "☰"]
      [:div.collapse.navbar-toggleable-xs
       (when-not @collapsed? {:class "in"})
-      [:a.navbar-brand {:href "#/"} "test-lum"]
+      [:a.navbar-brand {:href "#/"} "Karaoke"]
       [:ul.nav.navbar-nav
-       [nav-link "#/" "Home" :home collapsed?]
-       [nav-link "#/about" "About" :about collapsed?]
-       [nav-link "#/songs" "Songs" :songs collapsed?]]]]))
+       [nav-link "#/" "Songs" :songs collapsed?]
+       [nav-link "#/about" "About" :about collapsed?]]]]))
 
 (defn about-page []
   [:div.container
@@ -63,9 +62,8 @@
     (search-results)]])
 
 (def pages
-  {:home #'home-page
-   :about #'about-page
-   :songs #'songs-page})
+  {:home #'songs-page
+   :about #'about-page})
 
 (defn page []
   [:div
