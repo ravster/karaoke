@@ -1,13 +1,13 @@
 (ns user
   (:require [mount.core :as mount]
-            [test-lum.figwheel :refer [start-fw stop-fw cljs]]
-            test-lum.core))
+            [karaoke.figwheel :refer [start-fw stop-fw cljs]]
+            karaoke.core))
 
 (defn start []
-  (mount/start-without #'test-lum.core/repl-server))
+  (mount/start-without #'karaoke.core/repl-server))
 
 (defn stop []
-  (mount/stop-except #'test-lum.core/repl-server))
+  (mount/stop-except #'karaoke.core/repl-server))
 
 (defn restart []
   (stop)

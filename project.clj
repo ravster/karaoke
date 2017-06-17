@@ -1,4 +1,4 @@
-(defproject test-lum "0.1.0-SNAPSHOT"
+(defproject karaoke "0.1.0-SNAPSHOT"
 
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
@@ -42,7 +42,7 @@
   :test-paths ["test/clj"]
   :resource-paths ["resources" "target/cljsbuild"]
   :target-path "target/%s/"
-  :main ^:skip-aot test-lum.core
+  :main ^:skip-aot karaoke.core
   :migratus {:store :database :db ~(get (System/getenv) "DATABASE_URL")}
 
   :plugins [[lein-cprop "1.0.1"]
@@ -75,7 +75,7 @@
 
 
              :aot :all
-             :uberjar-name "test-lum.jar"
+             :uberjar-name "karaoke.jar"
              :source-paths ["env/prod/clj"]
              :resource-paths ["env/prod/resources"]}
 
@@ -98,9 +98,9 @@
                   {:builds
                    {:app
                     {:source-paths ["src/cljs" "src/cljc" "env/dev/cljs"]
-                     :figwheel {:on-jsload "test-lum.core/mount-components"}
+                     :figwheel {:on-jsload "karaoke.core/mount-components"}
                      :compiler
-                     {:main "test-lum.app"
+                     {:main "karaoke.app"
                       :asset-path "/js/out"
                       :output-to "target/cljsbuild/public/js/app.js"
                       :output-dir "target/cljsbuild/public/js/out"
@@ -123,7 +123,7 @@
                     {:source-paths ["src/cljc" "src/cljs" "test/cljs"]
                      :compiler
                      {:output-to "target/test.js"
-                      :main "test-lum.doo-runner"
+                      :main "karaoke.doo-runner"
                       :optimizations :whitespace
                       :pretty-print true}}}}
 
