@@ -54,12 +54,16 @@
 (defn songs-page []
   [:div.container
    [:div.row
+    [:p "Gold Entertainment"]]
+   [:div.row
     [:form
      [:input {:type "text"
               :placeholder "Song or artist name"
               :on-change #(rf/dispatch [:update-search (-> % .-target .-value)])}]]]
    [:div.row
-    (search-results)]])
+    (search-results)]
+   [:footer
+    [:p "gold.entertainment@sympatico.ca"]]])
 
 (def pages
   {:home #'songs-page
